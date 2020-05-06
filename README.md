@@ -13,4 +13,13 @@ The config uses the following plugins:
 * vim-commentary - easily apply comments to code
 * fzf - fuzzy finder plugin for nvim
 
+*TODO*
+git integration
 
+## Theme
+
+Currently using the Nord theme.
+
+*TODO* 
+
+Dart syntax highlighting is a bit off. 
