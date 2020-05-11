@@ -53,8 +53,8 @@ nnoremap tb :tabedit
 "
 
 " Maps '/' to comment out lines of code
-nnoremap <space>/ :Commentary<CR>
-vnoremap <space>/ :Commentary<CR>
+nnoremap <C-_> :Commentary<CR>
+vnoremap <C-_> :Commentary<CR>
 
 " Move a line down/up with Alt+j / Alt+k
 nnoremap <A-j> :m .+1<CR>==
