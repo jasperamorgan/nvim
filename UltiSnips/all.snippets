@@ -1,0 +1,118 @@
+# Temporarily putting this here. Ultisnips isn't picking up alternative locations. Needs fixing.
+snippet nnav
+
+
+abstract class $1 extends StatelessWidget {
+  factory $1() {
+    if (gWeb) return _$1Web();
+    if (gIOS) return _$1IOS();
+    return _$1Android();
+  }
+}
+
+$0
+
+
+class _$1Android extends StatelessWidget implements $1 {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("$1")),
+      body: _$1UI(
+        navigator: _Navigator<AndroidRouter>(
+        ),
+      ),
+    );
+  }
+}
+
+
+class _$1IOS extends StatelessWidget implements $1 {
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+          middle: Text("$1")),
+      child: _$1UI(
+        navigator: _Navigator<IOSRouter>(
+        ),
+      ),
+    );
+  }
+}
+
+class _$1Web extends StatelessWidget implements $1 {
+  @override
+  Widget build(BuildContext context) {
+    return _$1UI(
+      navigator: _Navigator<WebHubRouter>(
+      ),
+    );
+  }
+}
+
+
+
+class _Navigator<T extends RouterBase> extends NavigationHelper<T> {
+}
+
+class _$1UI extends StatelessWidget {
+  _$1UI({Key key, @required this.navigator})
+      : assert(
+            navigator != null, "'navigator' cannot be null for _$1UI"),
+        super(key: key);
+
+  final _Navigator navigator;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          FlatButton(
+            child: Text("button"),
+            onPressed: () {
+              // this.navigator.;
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+endsnippet
+
+# Snippets for dart in flutter project, to use add the following to your .vimrc
+# `autocmd BufRead,BufNewFile,BufEnter *.dart UltiSnipsAddFiletypes dart-flutter`
+# Flutter stateless widget
+snippet stless
+	class $1 extends StatelessWidget {
+		@override
+		Widget build(BuildContext context) {
+			return Container(
+				$0
+			);
+		}
+	}
+
+endsnippet
+
+# Flutter stateful widget
+snippet stful
+	class $1 extends StatefulWidget {
+		@override
+		_$1State createState() => _$1State();
+	}
+
+	class _$1State extends State<$1> {
+		@override
+		Widget build(BuildContext context) {
+			return Container(
+				$0
+			);
+		}
+	}
+endsnippet

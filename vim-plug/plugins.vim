@@ -32,6 +32,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'    
 
+    " Ultisnips for code snippets
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+
+
 call plug#end()
 
 let g:lsc_auto_map = v:true
