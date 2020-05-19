@@ -1,13 +1,15 @@
 {
-"coc.preferences.formatOnSaveFiletypes": [
-  "dart"
-],
-"explorer.width": 40,
-"explorer.icon.enableNerdfont": true,
-"explorer.previewAction.onHover": false,
-"explorer.keyMappings": {
-  "<cr>": ["expandable?", "expand", "open"],
-  ";": ["expandable?", "expand", "open"],
-  "v": "open:vsplit"
-}
+  "coc.preferences.formatOnSaveFiletypes": [
+   "dart"
+  ],
+  "explorer.width": 40,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    ";": ["expandable?", "expand", "open"],
+    "v": "open:vsplit"
+  },
+  "snippets.userSnippetsDirectory": "/home/jasperamorgan/.config/nvim/snips",
+  "snippets.ultisnips.directories": ["/home/jasperamorgan/.config/nvim/snips"] 
 }
