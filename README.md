@@ -22,4 +22,6 @@ Currently using the Nord theme.
 
 *TODO* 
 
-Dart syntax highlighting is a bit off. 
+* Dart syntax highlighting is a bit off. 
+* Investigate this VIM plugin for flutter: https://github.com/thosakwe/vim-flutter
+* Enable wrapping widgets that wrap other widgets like in VSCode/IntelliJ
