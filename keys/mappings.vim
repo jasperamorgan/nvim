@@ -64,4 +64,7 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-
+" coc mappings
+nmap <silent><leader>ca <Plug>(coc-codelens-action)
+vmap <silent><leader>a  <Plug>(coc-codeaction-selected)
+nmap <silent><leader>a  <Plug>(coc-codeaction)

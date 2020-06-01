@@ -1,5 +1,7 @@
 " set leader key
-let g:mapleader = "\<Space>"
+" let g:mapleader = "\<Space>"
+let g:mapleader = ","
+
 
 syntax enable                           " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
@@ -33,9 +35,11 @@ set updatetime=300                      " Faster completion
 set timeoutlen=100                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
-"set autochdir                           " Your working directory will always be the same as your working directory
-
+"set autochdir                          " Your working directory will always be the same as your working directory
+set timeoutlen=200                      " Shorter delay for the leader key to be registered
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
 " You can't stop me
 cmap w!! w !sudo tee %
+
+" let g:node_client_debug = 1

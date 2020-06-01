@@ -116,3 +116,77 @@ snippet stful
 		}
 	}
 endsnippet
+
+snippet hapi
+// import validate from '../../api/users/validate';
+import * as Hapi from '@hapi/hapi';
+import Logger from '../../helper/logger';
+import newResponse from '../../helper/response';
+import * as Boom from '@hapi/boom';
+
+export default {
+  name: '$1',
+  version: '1.0.0',
+  register: async (server: Hapi.Server) => {
+    return new Promise(resolve => {
+
+    const controller = new $2Controller();
+
+    server.route({
+      method: 'GET',
+      path: '/accounts',
+      options: {
+        handler: controller.doGet,
+        // validate: validate.create,
+        description: '',
+        tags: ['api', 'auth'],
+        auth: false,
+      },
+    });
+
+    resolve();
+  }).catch((e) => Logger.error(e));
+
+  },
+};
+
+
+// TODO add validator
+
+
+class $2Controller {
+
+  public doGet = async (request: Hapi.Request, toolkit: Hapi.ResponseToolkit): Promise<any> => {
+    try {
+      Logger.info(`GET - ${request.url.href}`);
+      return toolkit.response(
+        newResponse(request, {
+          value: { value: '' },
+        }),
+      );
+    } catch (error) {
+      return toolkit.response(
+        newResponse(request, {
+          boom: Boom.badImplementation(error),
+        }),
+      );
+    }
+
+  }
+
+}
+
+/*
+class $2Service {
+
+  public fetch = async(customerId: string) => {
+    Logger.info(`fetch for ${customerId}`);
+    // TODO fetch the accounts
+    return new Promise(resolve => {
+
+      resolve();
+    });
+  }
+}
+*/
+endsnippet
