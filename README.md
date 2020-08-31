@@ -16,6 +16,14 @@ The config uses the following plugins:
 *TODO*
 git integration
 
+## Installation / Setup
+
+The following are needed for the install.
+
+* Neovim version 3.x: https://github.com/neovim/neovim/wiki/Installing-Neovim
+* NodeJS (for coc): https://nodejs.org/en/download/package-manager
+* FZF: https://github.com/junegunn/fzf#installation
+
 ## Theme
 
 Currently using the Nord theme.
